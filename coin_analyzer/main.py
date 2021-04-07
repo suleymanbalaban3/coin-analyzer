@@ -55,11 +55,11 @@ def send_predictions():
 
 if __name__ == '__main__':
 
-    create_new_model()
-    send_predictions()
+    #create_new_model()
+    #send_predictions()
 
-    # schedule.every().day.at("00:01").do(create_new_model)
-    # schedule.every().hour.at(":10").do(send_predictions)
+    schedule.every().day.at("00:01").do(create_new_model)
+    schedule.every().hour.at(":10").do(send_predictions)
 
     while True:
         schedule.run_pending()
